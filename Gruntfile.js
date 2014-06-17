@@ -12,6 +12,8 @@ module.exports = function (grunt) {
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
+  grunt.registerTask('deploy', ['buildcontrol']);
+
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
@@ -456,7 +458,5 @@ module.exports = function (grunt) {
     'newer:jshint',
     'test',
     'build'
-  ]);
-
-  grunt.registerTask('deploy', ['buildcontrol']);
+  ]);  
 };
